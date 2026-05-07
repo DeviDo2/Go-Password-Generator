@@ -1,0 +1,5 @@
+password-generator
+password-generator.exe
+*.test
+coverage.out
+.gocache/

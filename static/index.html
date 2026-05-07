@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="panel controls" aria-labelledby="generator-title">
+        <div class="title-row">
+          <div>
+            <p class="eyebrow">Secure utility</p>
+            <h1 id="generator-title">Password Generator</h1>
+          </div>
+          <button class="icon-button" id="generate-now" type="button" aria-label="Generate passwords" title="Generate passwords">
+            <span aria-hidden="true">&#8635;</span>
+          </button>
+        </div>
+
+        <form id="password-form" class="control-grid">
+          <label class="field">
+            <span>Max length</span>
+            <input id="length" name="length" type="number" min="1" max="128" value="16">
+          </label>
+
+          <label class="field">
+            <span>Quantity</span>
+            <input id="count" name="count" type="number" min="1" max="50" value="4">
+          </label>
+
+          <fieldset class="sets">
+            <legend>Character sets</legend>
+            <label><input id="lowercase" type="checkbox" checked> Lowercase</label>
+            <label><input id="uppercase" type="checkbox" checked> Uppercase</label>
+            <label><input id="numbers" type="checkbox" checked> Numbers</label>
+            <label><input id="symbols" type="checkbox" checked> Symbols</label>
+          </fieldset>
+        </form>
+
+        <div class="stats" aria-live="polite">
+          <div>
+            <span class="stat-label">Pool</span>
+            <strong id="pool-size">0 chars</strong>
+          </div>
+          <div>
+            <span class="stat-label">Entropy</span>
+            <strong id="entropy">0 bits</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="results" aria-labelledby="results-title">
+        <div class="results-header">
+          <h2 id="results-title">Generated passwords</h2>
+          <button id="copy-all" type="button">Copy all</button>
+        </div>
+        <p id="error-message" class="error" role="alert"></p>
+        <ul id="password-list" class="password-list" aria-live="polite"></ul>
+      </section>
+    </main>
+  </body>
+</html>
