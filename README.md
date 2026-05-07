@@ -20,9 +20,3 @@ go run .
 ```
 
 Open [http://localhost:8080](http://localhost:8080).
-
-## Test
-
-```sh
-go test ./...
-```
